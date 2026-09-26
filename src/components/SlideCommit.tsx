@@ -72,7 +72,7 @@ export default function SlideCommit({
   const homeTimer = useRef<any>(0);
   const run = useRef(0);
   const unwatch = useRef<any>(null);
-  const live = useRef({ move: (e: any) => {}, up: (e: any) => {} });
+  const live = useRef({ move: (_e: any) => {}, up: (_e: any) => {} });
   const lastPercent = useRef(0);
 
   const GRIP = height - PAD * 2;
@@ -132,8 +132,8 @@ export default function SlideCommit({
   };
 
   const goHome = (velocity: number) => {
-    if (reduce) animate(x, 0, { duration: 0.2, ease: EASE_OUT });
-    else animate(x, 0, { ...homeSpring, velocity: Math.min(0, velocity) } as any);
+    if (reduce) (animate as any)(x, 0, { duration: 0.2, ease: EASE_OUT });
+    else (animate as any)(x, 0, { ...homeSpring, velocity: Math.min(0, velocity) });
   };
 
   const settle = () => {
@@ -149,9 +149,9 @@ export default function SlideCommit({
     animate(spin, 0, { duration: 0.12 });
     if (reduce) x.set(0);
     else {
-      animate(x, 0, commitSpring as any);
+      (animate as any)(x, 0, commitSpring);
       if (!viaKey && landingDip > 0) {
-        animate(pulse, [1, 1 - landingDip, 1], { duration: 0.46, times: [0, 0.62, 1], ease: EASE_OUT, delay: 0.1 });
+        (animate as any)(pulse, [1, 1 - landingDip, 1], { duration: 0.46, times: [0, 0.62, 1], ease: EASE_OUT, delay: 0.1 });
       }
     }
     onDone?.();
@@ -165,7 +165,7 @@ export default function SlideCommit({
     animate(shown, 1, { duration: 0.2, delay: 0.12 });
     if (reduce) goHome(0);
     else {
-      animate(shake, SHAKE, { duration: 0.45, ease: EASE_OUT });
+      (animate as any)(shake, SHAKE, { duration: 0.45, ease: EASE_OUT });
       homeTimer.current = setTimeout(() => {
         if (!grip.current) goHome(0);
       }, 300);
@@ -346,7 +346,7 @@ export default function SlideCommit({
               aria-hidden="true"
               initial={false}
               animate={{ opacity: done ? 1 : 0, scale: done || reduce ? 1 : 0.95 }}
-              transition={{ duration: 0.2, ease: EASE_OUT }}
+              transition={{ duration: 0.2, ease: EASE_OUT as any }}
             >
               <HugeiconsIcon icon={Tick02Icon} size={Math.round(GRIP * 0.38)} strokeWidth={2.5} />
               {doneLabel}
