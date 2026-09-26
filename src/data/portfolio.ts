@@ -7,6 +7,7 @@ export const portfolioData = {
     github: "https://github.com/kshiteej-mali",
     instagram: "https://www.instagram.com/kshiteejmali/",
     phone: "+918600497292",
+    email: "kshiteejmali@gmail.com",
     about: "Tech enthusiast from Pune focused on systems, programming, and digital creation. Experienced in leading development teams, building communities, and applying computer science to solve complex problems."
   },
   experience: [

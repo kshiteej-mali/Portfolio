@@ -16,7 +16,7 @@ export const Gallery: React.FC = () => {
       title: "Nvidia GeForce Day"
     },
     {
-      src: "/images/Hardware Repairingapc.mp4",
+      src: "/images/hardware-repairingapc_VmUrPErU.mp4",
       alt: "Hardware repairing a PC showcasing hardware troubleshooting skills.",
       type: "video",
       title: "PC Hardware Repair"

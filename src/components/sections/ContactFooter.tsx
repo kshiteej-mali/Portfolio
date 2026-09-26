@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../../data/portfolio';
 import { Terminal, ArrowRight } from 'lucide-react';
+import SlideCommit from '../SlideCommit';
 
 export const ContactFooter: React.FC = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>(['kmalis-macbook:~ guest$ ']);
@@ -71,12 +72,27 @@ export const ContactFooter: React.FC = () => {
                   <ArrowRight size={20} />
                 </span>
               </a>
-              <a href={`tel:${portfolioData.personal.phone}`} className="group flex items-center gap-4 text-2xl font-display uppercase tracking-widest hover:text-primary transition-colors w-fit">
-                Call Me
+              <a href={`mailto:${portfolioData.personal.email}`} className="group flex items-center gap-4 text-2xl font-display uppercase tracking-widest hover:text-primary transition-colors w-fit mb-4">
+                Email
                 <span className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-all">
                   <ArrowRight size={20} />
                 </span>
               </a>
+              
+              <SlideCommit
+                label="Slide for Phone No."
+                doneLabel={portfolioData.personal.phone}
+                errorLabel="Failed"
+                onConfirm={() => new Promise(resolve => setTimeout(resolve, 500))}
+                trackColor="#1a1a1a"
+                handleColor="#D4FF00"
+                successColor="#D4FF00"
+                width={280}
+                height={56}
+                radius={28}
+                speed={50}
+                holdMs={0}
+              />
             </div>
           </div>
 
