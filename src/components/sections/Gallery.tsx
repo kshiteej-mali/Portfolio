@@ -4,37 +4,37 @@ import { motion } from 'framer-motion';
 export const Gallery: React.FC = () => {
   const mediaFiles = [
     {
-      src: "/images/AgenticAIboothnvidia.jpg",
+      src: `${import.meta.env.BASE_URL}images/AgenticAIboothnvidia.jpg`,
       alt: "At the Nvidia Agentic AI Booth exploring cutting-edge AI developments.",
       type: "image",
       title: "Agentic AI Booth"
     },
     {
-      src: "/images/geforcedaynvidia.jpg",
+      src: `${import.meta.env.BASE_URL}images/geforcedaynvidia.jpg`,
       alt: "Attending Nvidia GeForce Day event.",
       type: "image",
       title: "Nvidia GeForce Day"
     },
     {
-      src: "/images/hardware-repairingapc_VmUrPErU.mp4",
+      src: `${import.meta.env.BASE_URL}images/hardware-repairingapc_VmUrPErU.mp4`,
       alt: "Hardware repairing a PC showcasing hardware troubleshooting skills.",
       type: "video",
       title: "PC Hardware Repair"
     },
     {
-      src: "/images/MUNpicturelookingatlaptop.jpeg",
+      src: `${import.meta.env.BASE_URL}images/MUNpicturelookingatlaptop.jpeg`,
       alt: "Representing at Model United Nations (MUN), looking at a laptop.",
       type: "image",
       title: "Model United Nations"
     },
     {
-      src: "/images/programmingsince15.jpg",
+      src: `${import.meta.env.BASE_URL}images/programmingsince15.jpg`,
       alt: "Early days of programming and building a strong foundation in computer science.",
       type: "image",
       title: "Programming Roots"
     },
     {
-      src: "/images/working.jpg",
+      src: `${import.meta.env.BASE_URL}images/working.jpg`,
       alt: "Deep into focus mode while working on a systems programming project.",
       type: "image",
       title: "Deep Work"
