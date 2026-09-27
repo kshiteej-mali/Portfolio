@@ -10,9 +10,9 @@ export const ContactFooter: React.FC = () => {
     if (e.key === 'Enter') {
       const input = e.currentTarget.value.trim().toLowerCase();
       e.currentTarget.value = '';
-      
+
       let response = '';
-      switch(input) {
+      switch (input) {
         case 'cat about.txt':
           response = portfolioData.personal.about;
           break;
@@ -36,7 +36,7 @@ export const ContactFooter: React.FC = () => {
         default:
           response = `Command not found: ${input}. Type 'help' for available commands.`;
       }
-      
+
       setTerminalOutput(prev => [...prev, input, response, 'kmalis-macbook:~ guest$ '].filter(Boolean));
     }
   };
@@ -47,12 +47,12 @@ export const ContactFooter: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div>
             <h2 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-6 leading-none">
-              Let's <br/> <span className="text-primary hover:text-white transition-colors cursor-pointer">Connect</span>
+              Let's <br /> <span className="text-primary hover:text-white transition-colors cursor-pointer">Connect</span>
             </h2>
             <p className="text-white/60 font-body mb-12 max-w-sm">
               Open for new opportunities, collaborations, or just a chat.
             </p>
-            
+
             <div className="flex flex-col gap-6">
               <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-2xl font-display uppercase tracking-widest hover:text-primary transition-colors w-fit">
                 LinkedIn Profile
@@ -78,7 +78,7 @@ export const ContactFooter: React.FC = () => {
                   <ArrowRight size={20} />
                 </span>
               </a>
-              
+
               <SlideCommit
                 label="Slide for Phone No."
                 doneLabel={portfolioData.personal.phone}
@@ -103,7 +103,7 @@ export const ContactFooter: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
               </div>
-              <span className="mx-auto text-xs text-white/40 tracking-widest flex items-center gap-2"><Terminal size={12}/> terminal</span>
+              <span className="mx-auto text-xs text-white/40 tracking-widest flex items-center gap-2"><Terminal size={12} /> terminal</span>
             </div>
             <div className="p-6 h-[300px] overflow-y-auto text-sm text-white/80 space-y-2">
               {terminalOutput.map((line, i) => (
@@ -113,7 +113,7 @@ export const ContactFooter: React.FC = () => {
               ))}
               <div className="flex items-center text-primary">
                 <span className="mr-2">&gt;</span>
-                <input 
+                <input
                   type="text"
                   onKeyDown={handleTerminalInput}
                   className="bg-transparent border-none outline-none flex-1 text-white/90 focus:ring-0"
@@ -125,10 +125,10 @@ export const ContactFooter: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 font-body text-xs uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Kshiteej Mali. All rights reserved.</p>
-          <p className="mt-4 md:mt-0 flex items-center gap-2">Designed with <span className="text-secondary animate-pulse">♥</span> System</p>
+          <p className="mt-4 md:mt-0 flex items-center gap-2">Designed with <span className="text-secondary animate-pulse">♥</span> By Kshiteej Mali</p>
         </div>
       </div>
     </footer>
