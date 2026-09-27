@@ -29,7 +29,7 @@ export const Gallery: React.FC = () => {
     },
     {
       src: `${import.meta.env.BASE_URL}images/programmingsince15.jpg`,
-      alt: "Early days of programming and building a strong foundation in computer science.",
+      alt: "I started Python at the age of seven.",
       type: "image",
       title: "Programming Roots"
     },
